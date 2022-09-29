@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner </title>
+    <script src="html5-qrcode.min.js" ></script>
+    <style>
+        #reader__camera_permission_button{
+            padding: 10px;
+            color: white;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 7px;
+        }
+        #reader__dashboard_section_swaplink{
+            text-decoration: none!important;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            background: blue;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>hellow raji</h1>khsdfh
+    <div style="width: 500px; height:auto" id="reader"></div>
+
+
+
+    <script>
+        // start here qrcode scanner code 
+        function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+            console.log(`Scan result: ${decodedText}`, decodedResult);
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+        
+        // start here other codes
+        let reader_swaplink = document.querySelector('#reader__dashboard_section_swaplink').parentElement;
+        reader_swaplink.style.margin = '20px';
+    </script>
+</body>
+
+</html>
