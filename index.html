@@ -37,11 +37,16 @@
         function onScanSuccess(decodedText, decodedResult) {
             // Handle on success condition with the decoded text or result.
             let result = document.getElementById("result");
-            result.innerHTML = decodedText;
+            result.innerHTML = decodedText + decodedResult;
+            html5QrcodeScanner.clear();
             console.log(`Scan result: ${decodedText}`, decodedResult);
         }
+                
+        function onScanError(errorMessage) {
+            
+        }
 
-        var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+        var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 20, qrbox: 250 });
         html5QrcodeScanner.render(onScanSuccess);
         
         // start here other codes
