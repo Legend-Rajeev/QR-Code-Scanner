@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <h1>hellow raji</h1>khsdfh
+    <h1 id="result">hellow raji</h1>khsdfh
     <div style="width: 500px; height:auto" id="reader"></div>
 
 
@@ -36,6 +36,8 @@
         // start here qrcode scanner code 
         function onScanSuccess(decodedText, decodedResult) {
             // Handle on success condition with the decoded text or result.
+            let result = document.getElementById("result");
+            result.innerHTML = decodedText;
             console.log(`Scan result: ${decodedText}`, decodedResult);
         }
 
